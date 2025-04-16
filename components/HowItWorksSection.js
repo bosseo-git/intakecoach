@@ -1,83 +1,145 @@
-export default function HowItWorksSection() {
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaHeadset, FaBrain, FaClipboardCheck, FaChartLine, FaLightbulb } from 'react-icons/fa';
+import styles from '../styles/HowItWorksSection.module.css';
+
+const HowItWorksSection = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  // Steps data
   const steps = [
     {
-      title: "Call Capture",
-      description: "IntakeCoach seamlessly integrates with your existing phone system to monitor and record calls.",
-      icon: (
-        <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-      )
+      icon: <FaHeadset />,
+      title: "Record Your Calls",
+      description: "IntakeCoach securely captures your intake calls with client permission. No hardware needed - works with your existing phone system or VOIP solution.",
+      color: "#3B82F6"
     },
     {
-      title: "AI-Powered Transcription",
-      description: "Advanced AI technology converts spoken conversations into accurate text in real-time.",
-      icon: (
-        <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-        </svg>
-      )
+      icon: <FaBrain />,
+      title: "AI Analysis",
+      description: "Our advanced AI engine processes each call, analyzing tone, keywords, questions asked, and overall conversation flow.",
+      color: "#8B5CF6"
     },
     {
-      title: "Automated Categorization",
-      description: "Our system intelligently categorizes calls and extracts key data points for comprehensive analysis.",
-      icon: (
-        <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-        </svg>
-      )
+      icon: <FaClipboardCheck />,
+      title: "Generate Insights",
+      description: "Within minutes, receive a detailed breakdown of each call with actionable insights, missed opportunities, and conversion probability.",
+      color: "#EC4899"
     },
     {
-      title: "Detailed Analytics",
-      description: "Generate comprehensive reports and identify patterns to optimize your sales approach and team performance.",
-      icon: (
-        <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      )
+      icon: <FaChartLine />,
+      title: "Performance Tracking",
+      description: "Track performance metrics over time, identify trends, and measure improvement in your team's intake effectiveness.",
+      color: "#10B981"
     },
     {
-      title: "Instant Feedback",
-      description: "Receive immediate, actionable insights after every call to continuously improve sales techniques and outcomes.",
-      icon: (
-        <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
+      icon: <FaLightbulb />,
+      title: "Continuous Improvement",
+      description: "Use AI-powered suggestions to refine your intake process, train staff, and increase conversion rates month after month.",
+      color: "#F59E0B"
     }
   ];
 
   return (
-    <section id="how-it-works" className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            IntakeCoach integrates seamlessly with your existing systems to enhance call management, analysis, and sales performance.
-          </p>
-        </div>
-        
-        <div className="max-w-4xl mx-auto">
+    <section className={styles.section} id="how-it-works">
+      <div className="container mx-auto px-4">
+        <motion.div 
+          className={styles.header}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={itemVariants}
+        >
+          <h2 className={styles.title}>How IntakeCoach Works</h2>
+          <p className={styles.subtitle}>From call to insights in minutes - no complex setup required</p>
+        </motion.div>
+
+        <motion.div 
+          className={styles.stepsContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={containerVariants}
+        >
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col md:flex-row items-center mb-12 last:mb-0">
-              <div className="flex-shrink-0 bg-blue-100 rounded-full p-4 mb-4 md:mb-0 md:mr-6">
+            <motion.div 
+              key={index} 
+              className={styles.step}
+              variants={itemVariants}
+            >
+              <div className={styles.stepNumber}>{index + 1}</div>
+              <div 
+                className={styles.iconContainer} 
+                style={{ backgroundColor: `${step.color}20`, color: step.color }}
+              >
                 {step.icon}
               </div>
-              <div className="flex-grow md:ml-4 text-center md:text-left">
-                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+              <div className={styles.content}>
+                <h3 className={styles.stepTitle}>{step.title}</h3>
+                <p className={styles.stepDescription}>{step.description}</p>
               </div>
               {index < steps.length - 1 && (
-                <div className="hidden md:block mx-4">
-                  <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <div className={styles.connector}>
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="50" x2="100" y2="50" stroke="#CBD5E1" strokeWidth="2" strokeDasharray="5,5" />
+                    <polygon points="95,45 100,50 95,55" fill="#CBD5E1" />
                   </svg>
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        <motion.div 
+          className={styles.demoContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={itemVariants}
+        >
+          <div className={styles.demoContent}>
+            <h3>See IntakeCoach in Action</h3>
+            <p>Watch how our platform transforms your intake calls into actionable insights and business opportunities.</p>
+            <button className={styles.demoButton}>
+              Schedule a Live Demo
+            </button>
+          </div>
+          <div className={styles.demoImageContainer}>
+            <div className={styles.demoImagePlaceholder}>
+              {/* This will be replaced with an actual image or video thumbnail */}
+              <div className={styles.playButton}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
-} 
+};
+
+export default HowItWorksSection; 

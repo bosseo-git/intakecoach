@@ -1,83 +1,218 @@
-export default function IndustryUseCasesSection() {
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { FaGavel, FaHospital, FaUniversity, FaHome, FaCarAlt } from 'react-icons/fa';
+import styles from '../styles/IndustryUseCasesSection.module.css';
+
+const IndustryUseCasesSection = () => {
+  const [activeTab, setActiveTab] = useState('legal');
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
+  // Industry data
   const industries = [
     {
-      name: "Home Improvement",
-      description: "Optimize client interactions and project scheduling to drive efficiency on every job site. Track customer inquiries, improve follow-up processes, and increase closing rates for renovation projects and home services.",
-      icon: (
-        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-      )
+      id: 'legal',
+      name: 'Legal Firms',
+      icon: <FaGavel />,
+      title: 'Transform Legal Client Intake',
+      description: 'IntakeCoach helps legal firms convert more potential clients into retained cases by improving initial consultation calls.',
+      benefits: [
+        'Identify case value and urgency automatically',
+        'Track case type conversion rates by attorney',
+        'Improve client experience from first point of contact',
+        'Increase retention rates for high-value cases'
+      ],
+      testimonial: {
+        quote: 'IntakeCoach has become an indispensable part of our intake process. We've seen a 34% increase in client retention since implementing the platform.',
+        author: 'Jennifer Thompson',
+        position: 'Managing Partner, Thompson Law Group'
+      }
     },
     {
-      name: "Legal Services",
-      description: "Ensure precise call records and documentation for effective case management. Capture critical information during initial consultations, track billable hours, and maintain compliance while improving client conversion rates.",
-      icon: (
-        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-        </svg>
-      )
+      id: 'medical',
+      name: 'Healthcare',
+      icon: <FaHospital />,
+      title: 'Optimize Patient Acquisition',
+      description: 'Improve patient scheduling and retention by analyzing phone interactions and identifying areas for improvement in your intake process.',
+      benefits: [
+        'Reduce appointment no-shows with better call handling',
+        'Capture complete patient information during initial calls',
+        'Track performance of different patient coordinators',
+        'Improve overall patient experience from first contact'
+      ],
+      testimonial: {
+        quote: 'Our patient conversion rate has increased dramatically since using IntakeCoach. We're seeing fewer missed appointments and better prepared patients.',
+        author: 'Dr. Michael Chen',
+        position: 'Director, Premier Medical Group'
+      }
     },
     {
-      name: "Medical & Dental",
-      description: "Improve patient care with timely call analysis, appointment reminders, and follow-up support. Document symptoms reported during calls, schedule appointments efficiently, and ensure proper triage while maximizing patient retention.",
-      icon: (
-        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      )
+      id: 'education',
+      name: 'Education',
+      icon: <FaUniversity />,
+      title: 'Enhance Student Enrollment',
+      description: 'Turn more prospective student inquiries into enrollments by optimizing your admissions call process with data-driven insights.',
+      benefits: [
+        'Track and improve counselor performance',
+        'Identify key factors influencing enrollment decisions',
+        'Better address prospective student concerns',
+        'Create consistent enrollment experiences across teams'
+      ],
+      testimonial: {
+        quote: 'IntakeCoach has revolutionized our admissions process. We can now identify which counselors need additional training and what messaging resonates with students.',
+        author: 'Dr. Sarah Johnson',
+        position: 'Director of Admissions, Westfield University'
+      }
     },
     {
-      name: "Real Estate",
-      description: "From property inquiries to closing deals, track and optimize every client interaction. Record buyer preferences, manage showing schedules, and ensure timely follow-ups to increase property transaction rates and agent performance.",
-      icon: (
-        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-        </svg>
-      )
+      id: 'realestate',
+      name: 'Real Estate',
+      icon: <FaHome />,
+      title: 'Close More Property Deals',
+      description: 'Improve how your agents handle initial property inquiries and convert more callers into qualified buyers and sellers.',
+      benefits: [
+        'Identify serious buyers vs casual inquiries',
+        'Track agent performance with lead conversion metrics',
+        'Improve follow-up processes for potential clients',
+        'Ensure consistent messaging across all agents'
+      ],
+      testimonial: {
+        quote: 'The insights from IntakeCoach have helped us refine our initial client conversations. Our agents now convert 40% more calls into showings.',
+        author: 'Robert Williams',
+        position: 'Broker, Williams Realty Partners'
+      }
     },
     {
-      name: "Retail",
-      description: "Enhance customer service by analyzing product inquiries, tracking order status calls, and improving the shopping experience. Monitor popular product questions and train staff based on real interactions to boost sales conversion.",
-      icon: (
-        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-        </svg>
-      )
-    },
-    {
-      name: "Financial Services",
-      description: "Maintain compliance while documenting client interactions for investment advice and financial planning. Record conversations for regulatory purposes, track client goals, and improve conversion rates for financial products and services.",
-      icon: (
-        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
+      id: 'automotive',
+      name: 'Automotive',
+      icon: <FaCarAlt />,
+      title: 'Drive More Showroom Visits',
+      description: 'Convert more phone inquiries into test drives and purchases by optimizing your dealership's call handling process.',
+      benefits: [
+        'Track sales representative performance on calls',
+        'Identify missed opportunities in pricing discussions',
+        'Improve follow-up processes for potential buyers',
+        'Better handle initial objections and questions'
+      ],
+      testimonial: {
+        quote: 'Since implementing IntakeCoach, we've seen a 28% increase in phone-to-showroom conversion rates. The call insights have been invaluable for our sales training.',
+        author: 'James Peterson',
+        position: 'Sales Director, Premium Auto Group'
+      }
     }
   ];
 
+  // Get current active industry
+  const activeIndustry = industries.find(industry => industry.id === activeTab);
+
   return (
-    <section id="industry-use-cases" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Industry Use Cases</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            See how IntakeCoach drives better sales performance by delivering real results beyond marketing claims, tailored to address the specific challenges of your industry.
+    <section className={styles.section} id="industry-use-cases">
+      <div className="container mx-auto px-4">
+        <motion.div 
+          className={styles.header}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={itemVariants}
+        >
+          <h2 className={styles.title}>Industry Solutions</h2>
+          <p className={styles.subtitle}>
+            IntakeCoach delivers results across multiple industries where phone interactions are critical
           </p>
+        </motion.div>
+
+        <div className={styles.tabsContainer}>
+          <div className={styles.tabs}>
+            {industries.map((industry) => (
+              <button
+                key={industry.id}
+                className={`${styles.tabButton} ${activeTab === industry.id ? styles.active : ''}`}
+                onClick={() => setActiveTab(industry.id)}
+              >
+                <span className={styles.tabIcon}>{industry.icon}</span>
+                <span className={styles.tabLabel}>{industry.name}</span>
+              </button>
+            ))}
+          </div>
+
+          <motion.div 
+            className={styles.contentContainer}
+            key={activeTab}
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+          >
+            <motion.div className={styles.industryIcon} variants={itemVariants}>
+              {activeIndustry.icon}
+            </motion.div>
+            <motion.h3 className={styles.industryTitle} variants={itemVariants}>
+              {activeIndustry.title}
+            </motion.h3>
+            <motion.p className={styles.industryDescription} variants={itemVariants}>
+              {activeIndustry.description}
+            </motion.p>
+            
+            <motion.div className={styles.benefitsContainer} variants={itemVariants}>
+              <h4>Key Benefits</h4>
+              <ul className={styles.benefitsList}>
+                {activeIndustry.benefits.map((benefit, index) => (
+                  <motion.li 
+                    key={index}
+                    variants={itemVariants}
+                    custom={index}
+                  >
+                    {benefit}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div className={styles.testimonial} variants={itemVariants}>
+              <blockquote>
+                "{activeIndustry.testimonial.quote}"
+              </blockquote>
+              <cite>
+                <span className={styles.authorName}>{activeIndustry.testimonial.author}</span>
+                <span className={styles.authorPosition}>{activeIndustry.testimonial.position}</span>
+              </cite>
+            </motion.div>
+          </motion.div>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {industries.map((industry, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="mb-4">
-                {industry.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-3">{industry.name}</h3>
-              <p className="text-gray-600">{industry.description}</p>
-            </div>
-          ))}
-        </div>
+
+        <motion.div 
+          className={styles.ctaContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={itemVariants}
+        >
+          <p>Learn how IntakeCoach can be customized for your specific industry needs</p>
+          <button className={styles.ctaButton}>
+            Request Industry Consultation
+          </button>
+        </motion.div>
       </div>
     </section>
   );
-} 
+};
+
+export default IndustryUseCasesSection; 

@@ -1,131 +1,217 @@
-export default function SalesPerformanceSection() {
-  const roles = [
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaChartLine, FaUserTie, FaHandshake, FaRegLightbulb, FaUsers } from 'react-icons/fa';
+import styles from '../styles/SalesPerformanceSection.module.css';
+
+const SalesPerformanceSection = () => {
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  // Performance metrics
+  const metrics = [
     {
-      title: "For Owners",
-      description: "Make informed business decisions with clear, data-backed performance metrics.",
-      icon: (
-        <svg className="w-14 h-14 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-        </svg>
-      ),
-      benefits: [
-        "Real-time visibility into team performance",
-        "Clear ROI on sales and marketing efforts",
-        "Data-driven decision making tools",
-        "Identify top performers and winning strategies"
-      ]
+      stat: "27%",
+      label: "Average Increase in Conversion Rate",
+      icon: <FaChartLine />,
+      color: "#3B82F6"
     },
     {
-      title: "For Managers",
-      description: "Automate training and receive real-time insights to coach your team effectively.",
-      icon: (
-        <svg className="w-14 h-14 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      ),
-      benefits: [
-        "Automated training based on real call data",
-        "Identify coaching opportunities with analytics",
-        "Track improvement over time with metrics",
-        "Easily share winning call examples team-wide"
-      ]
+      stat: "40%",
+      label: "Reduction in Missed Client Opportunities",
+      icon: <FaUserTie />,
+      color: "#10B981"
     },
     {
-      title: "For Sales Staff",
-      description: "Gain instant feedback to improve your approach and close more deals.",
-      icon: (
-        <svg className="w-14 h-14 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-        </svg>
-      ),
-      benefits: [
-        "Immediate feedback after every call",
-        "Learn from top-performing examples",
-        "Personalized improvement suggestions",
-        "Track your progress and celebrate wins"
-      ]
+      stat: "35%",
+      label: "Improved Client Satisfaction",
+      icon: <FaHandshake />,
+      color: "#F59E0B"
     }
   ];
 
-  const actionableInsights = [
+  // Key benefits
+  const benefits = [
     {
-      title: "Boost Closing Rates",
-      description: "Leverage data-driven insights to increase closing percentages and convert more prospects."
+      icon: <FaRegLightbulb />,
+      title: "AI-Powered Coaching",
+      description: "Personalized coaching recommendations based on real call data help your team continually improve their conversion techniques."
     },
     {
-      title: "Automated Training",
-      description: "Use real call data to identify training needs and improve team performance automatically."
+      icon: <FaUsers />,
+      title: "Team Performance Comparison",
+      description: "See how individual team members perform against benchmarks and identify top performers whose techniques can be shared across the team."
     },
     {
-      title: "Instant Feedback",
-      description: "Provide immediate, actionable feedback to your sales staff after each call to improve techniques."
+      icon: <FaChartLine />,
+      title: "Performance Tracking Over Time",
+      description: "Monitor how your team's performance evolves with training and coaching, identifying trends and areas for improvement."
     }
   ];
 
   return (
-    <section id="sales-performance" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Increase Closing Percentages – Get the Real Results</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Don't let marketers lie to you about call volume—get the real results. IntakeCoach delivers actionable 
-            insights that directly impact your bottom line.
+    <section className={styles.section} id="sales-performance">
+      <div className="container mx-auto px-4">
+        <motion.div 
+          className={styles.header}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
+          <h2 className={styles.title}>Transform Your Sales Performance</h2>
+          <p className={styles.subtitle}>
+            IntakeCoach helps firms increase conversion rates and maximize revenue from existing call volume
           </p>
-        </div>
+        </motion.div>
 
-        {/* Actionable Insights */}
-        <div className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {actionableInsights.map((insight, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="text-xl font-bold mb-3 text-primary">{insight.title}</h3>
-                <p className="text-gray-700">{insight.description}</p>
+        <motion.div 
+          className={styles.metricsContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={staggerContainer}
+        >
+          {metrics.map((metric, index) => (
+            <motion.div 
+              key={index} 
+              className={styles.metricCard}
+              variants={fadeIn}
+            >
+              <div 
+                className={styles.iconContainer} 
+                style={{ backgroundColor: `${metric.color}20`, color: metric.color }}
+              >
+                {metric.icon}
               </div>
+              <div className={styles.stat} style={{ color: metric.color }}>{metric.stat}</div>
+              <div className={styles.label}>{metric.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div 
+          className={styles.chartContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
+          <div className={styles.chart}>
+            {/* This would be replaced with an actual chart component */}
+            <div className={styles.chartPlaceholder}>
+              <div className={styles.barContainer}>
+                <div className={styles.barLabel}>Before</div>
+                <div className={styles.bar} style={{ height: '40%' }}></div>
+                <div className={styles.barValue}>40%</div>
+              </div>
+              <div className={styles.barContainer}>
+                <div className={styles.barLabel}>After 30 Days</div>
+                <div className={styles.bar} style={{ height: '55%' }}></div>
+                <div className={styles.barValue}>55%</div>
+              </div>
+              <div className={styles.barContainer}>
+                <div className={styles.barLabel}>After 90 Days</div>
+                <div className={styles.bar} style={{ height: '67%' }}></div>
+                <div className={styles.barValue}>67%</div>
+              </div>
+            </div>
+            <div className={styles.chartCaption}>
+              Average conversion rate improvement for new clients
+            </div>
+          </div>
+          <div className={styles.chartText}>
+            <h3>Measurable Results, Fast</h3>
+            <p>
+              IntakeCoach clients see significant improvement in conversion rates within the first month. 
+              By analyzing every call and providing actionable coaching, your team develops better client 
+              relationships and closing techniques that translate directly to increased revenue.
+            </p>
+            <ul className={styles.bulletPoints}>
+              <li>Start seeing improvements in as little as 2 weeks</li>
+              <li>Sustainable, long-term performance gains</li>
+              <li>Average ROI of 300% within first quarter</li>
+            </ul>
+          </div>
+        </motion.div>
+
+        <motion.div 
+          className={styles.benefitsContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={staggerContainer}
+        >
+          <h3 className={styles.benefitsTitle}>How IntakeCoach Improves Performance</h3>
+          <div className={styles.benefitsGrid}>
+            {benefits.map((benefit, index) => (
+              <motion.div 
+                key={index} 
+                className={styles.benefitCard}
+                variants={fadeIn}
+              >
+                <div className={styles.benefitIcon}>{benefit.icon}</div>
+                <h4 className={styles.benefitTitle}>{benefit.title}</h4>
+                <p className={styles.benefitDescription}>{benefit.description}</p>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        {/* Benefits by Role */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto mb-16">
-          {roles.map((role, index) => (
-            <div key={index} className="bg-white rounded-lg p-8 shadow-md">
-              <div className="flex justify-center mb-6">
-                {role.icon}
-              </div>
-              <h3 className="text-2xl font-bold text-center mb-4">{role.title}</h3>
-              <p className="text-gray-600 text-center mb-6">{role.description}</p>
-              <ul className="space-y-3">
-                {role.benefits.map((benefit, idx) => (
-                  <li key={idx} className="flex items-start">
-                    <svg className="w-5 h-5 text-green-500 mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
+        <motion.div 
+          className={styles.testimonial}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
+          <blockquote>
+            "We've increased our conversion rate by 32% in just two months using IntakeCoach. 
+            The insights into our calls and the coaching recommendations have transformed how 
+            our intake specialists handle potential clients."
+          </blockquote>
+          <div className={styles.testimonialAuthor}>
+            <div className={styles.testimonialAvatar}>
+              {/* Avatar placeholder - would be replaced with actual image */}
+              <div className={styles.avatarPlaceholder}>MJ</div>
             </div>
-          ))}
-        </div>
-
-        <div className="bg-primary bg-opacity-10 rounded-lg p-8 max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-6">Key Performance Benefits</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="font-bold text-3xl text-primary mb-2">+42%</div>
-              <p>Increased closing rates through data insights</p>
-            </div>
-            <div className="text-center">
-              <div className="font-bold text-3xl text-primary mb-2">85%</div>
-              <p>Of users report improved sales conversations</p>
-            </div>
-            <div className="text-center">
-              <div className="font-bold text-3xl text-primary mb-2">3.5x</div>
-              <p>ROI from automated training and feedback</p>
+            <div>
+              <div className={styles.testimonialName}>Michael Johnson</div>
+              <div className={styles.testimonialTitle}>Managing Partner, Johnson Legal Group</div>
             </div>
           </div>
-        </div>
+        </motion.div>
+
+        <motion.div 
+          className={styles.ctaContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
+          <button className={styles.ctaButton}>
+            Book a Performance Analysis
+          </button>
+        </motion.div>
       </div>
     </section>
   );
-} 
+};
+
+export default SalesPerformanceSection; 

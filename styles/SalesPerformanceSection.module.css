@@ -1,0 +1,380 @@
+.section {
+  padding: 100px 0;
+  background-color: #f8fafc;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1e3a8a;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.metricsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto 5rem;
+}
+
+.metricCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metricCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.iconContainer {
+  font-size: 2rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.stat {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.label {
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+.chartContainer {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background-color: white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  max-width: 1100px;
+  margin: 0 auto 5rem;
+}
+
+.chart {
+  flex: 1;
+}
+
+.chartPlaceholder {
+  height: 300px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.barContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+}
+
+.barLabel {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.bar {
+  width: 50px;
+  background-color: #3b82f6;
+  border-radius: 8px 8px 0 0;
+  transition: height 1s ease;
+}
+
+.barValue {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.chartCaption {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.chartText {
+  flex: 1;
+}
+
+.chartText h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1e3a8a;
+}
+
+.chartText p {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.bulletPoints {
+  list-style-type: none;
+  padding: 0;
+}
+
+.bulletPoints li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+}
+
+.bulletPoints li:before {
+  content: "•";
+  color: #3b82f6;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -0.25rem;
+}
+
+.benefitsContainer {
+  max-width: 1100px;
+  margin: 0 auto 5rem;
+}
+
+.benefitsTitle {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: #1e3a8a;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.benefitCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.benefitCard:hover {
+  transform: translateY(-5px);
+}
+
+.benefitIcon {
+  font-size: 2rem;
+  color: #3b82f6;
+  margin-bottom: 1.5rem;
+}
+
+.benefitTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1e3a8a;
+}
+
+.benefitDescription {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.testimonial {
+  background-color: white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  margin: 0 auto 4rem;
+}
+
+.testimonial blockquote {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #1e3a8a;
+  font-style: italic;
+  margin-bottom: 2rem;
+  position: relative;
+  padding: 0 1.5rem;
+}
+
+.testimonial blockquote:before,
+.testimonial blockquote:after {
+  content: '"';
+  font-size: 3rem;
+  color: #dbeafe;
+  position: absolute;
+  line-height: 1;
+}
+
+.testimonial blockquote:before {
+  left: -1rem;
+  top: -1rem;
+}
+
+.testimonial blockquote:after {
+  right: -1rem;
+  bottom: -2rem;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+}
+
+.testimonialAvatar {
+  margin-right: 1rem;
+}
+
+.avatarPlaceholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.testimonialName {
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.testimonialTitle {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.ctaContainer {
+  text-align: center;
+}
+
+.ctaButton {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+}
+
+.ctaButton:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(37, 99, 235, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .metricsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .chartContainer {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  
+  .benefitsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .metricsContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat {
+    font-size: 2.5rem;
+  }
+  
+  .chartPlaceholder {
+    height: 250px;
+  }
+  
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonial {
+    padding: 2rem;
+  }
+  
+  .testimonial blockquote {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .barContainer {
+    width: 60px;
+  }
+  
+  .bar {
+    width: 40px;
+  }
+  
+  .ctaButton {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+  }
+} 

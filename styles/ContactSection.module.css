@@ -1,0 +1,272 @@
+.section {
+  padding: 100px 0;
+  background-color: #fff;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1e3a8a;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contactContainer {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.formContainer {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.formContainer h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1e3a8a;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.formGroup textarea {
+  resize: vertical;
+}
+
+.submitButton {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.submitButton:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contactInfo h3,
+.officesContainer h3,
+.socialLinks h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: #1e3a8a;
+}
+
+.contactInfo ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contactInfo li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #334155;
+  font-size: 1.1rem;
+}
+
+.contactInfo li svg {
+  color: #2563eb;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+}
+
+.officesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.officeCard {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.officeCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.officeCard h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1e3a8a;
+}
+
+.officeCard address {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-style: normal;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.officeCard address svg {
+  color: #2563eb;
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.officePhone {
+  display: flex;
+  align-items: center;
+  color: #475569;
+}
+
+.officePhone svg {
+  color: #2563eb;
+  margin-right: 0.75rem;
+}
+
+.socialLinks {
+  margin-top: auto;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.socialIcons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: #f1f5f9;
+  border-radius: 50%;
+  color: #1e3a8a;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.socialIcons a:hover {
+  background-color: #2563eb;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .contactContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .infoContainer {
+    order: -1;
+  }
+  
+  .officesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .officesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .officesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .formContainer,
+  .officeCard {
+    padding: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+  }
+} 

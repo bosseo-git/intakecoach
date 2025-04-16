@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
@@ -6,6 +7,8 @@ import TotalCallInsightsSection from '../components/TotalCallInsightsSection';
 import DetailedCallBreakdownSection from '../components/DetailedCallBreakdownSection';
 import MarketingFluffSection from '../components/MarketingFluffSection';
 import AutomatedMonitoringSection from '../components/AutomatedMonitoringSection';
+import EffortlessIntegrationSection from '../components/EffortlessIntegrationSection';
+import ConnectEverythingSection from '../components/ConnectEverythingSection';
 import HowItWorksSection from '../components/HowItWorksSection';
 import IndustryUseCasesSection from '../components/IndustryUseCasesSection';
 import SalesPerformanceSection from '../components/SalesPerformanceSection';
@@ -31,6 +34,8 @@ export default function Home() {
         <DetailedCallBreakdownSection />
         <MarketingFluffSection />
         <AutomatedMonitoringSection />
+        <EffortlessIntegrationSection />
+        <ConnectEverythingSection />
         <FeaturesSection />
         <HowItWorksSection />
         <SalesPerformanceSection />
