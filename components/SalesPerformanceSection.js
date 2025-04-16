@@ -47,20 +47,48 @@ export default function SalesPerformanceSection() {
     }
   ];
 
+  const actionableInsights = [
+    {
+      title: "Boost Closing Rates",
+      description: "Leverage data-driven insights to increase closing percentages and convert more prospects."
+    },
+    {
+      title: "Automated Training",
+      description: "Use real call data to identify training needs and improve team performance automatically."
+    },
+    {
+      title: "Instant Feedback",
+      description: "Provide immediate, actionable feedback to your sales staff after each call to improve techniques."
+    }
+  ];
+
   return (
-    <section id="sales-performance" className="py-20 bg-white">
+    <section id="sales-performance" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Increase Your Closing Percentages</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Increase Closing Percentages – Get the Real Results</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Don't let marketers lie to you about call volume—get the real results. IntakeCoach delivers actionable 
             insights that directly impact your bottom line.
           </p>
         </div>
 
+        {/* Actionable Insights */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {actionableInsights.map((insight, index) => (
+              <div key={index} className="bg-white rounded-lg p-6 shadow-md">
+                <h3 className="text-xl font-bold mb-3 text-primary">{insight.title}</h3>
+                <p className="text-gray-700">{insight.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Benefits by Role */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto mb-16">
           {roles.map((role, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-8 shadow-md">
+            <div key={index} className="bg-white rounded-lg p-8 shadow-md">
               <div className="flex justify-center mb-6">
                 {role.icon}
               </div>

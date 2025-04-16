@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import FeaturesSection from '../components/FeaturesSection';
+import TotalCallInsightsSection from '../components/TotalCallInsightsSection';
+import DetailedCallBreakdownSection from '../components/DetailedCallBreakdownSection';
 import HowItWorksSection from '../components/HowItWorksSection';
 import IndustryUseCasesSection from '../components/IndustryUseCasesSection';
 import SalesPerformanceSection from '../components/SalesPerformanceSection';
@@ -14,8 +16,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>IntakeCoach - Revolutionize Your Call Analysis</title>
-        <meta name="description" content="IntakeCoach - A comprehensive call analysis platform with automated call categorization, real-time AI transcription, and actionable analytics to drive sales performance." />
+        <title>IntakeCoach - Build Relationships, Not Todo Lists</title>
+        <meta name="description" content="IntakeCoach - A comprehensive call analysis platform that helps you build relationships, not todo lists, with real-time insights and actionable analytics to drive sales performance." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -23,10 +25,12 @@ export default function Home() {
       
       <main>
         <HeroSection />
+        <TotalCallInsightsSection />
+        <DetailedCallBreakdownSection />
         <FeaturesSection />
         <HowItWorksSection />
-        <IndustryUseCasesSection />
         <SalesPerformanceSection />
+        <IndustryUseCasesSection />
         <IntegrationsSection />
         <PricingSection />
         <ContactSection />

@@ -16,11 +16,11 @@ export default function HeroSection() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col items-center text-center py-24 md:py-32">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Revolutionize Your Call Analysis
+              Build Relationships, Not Todo Lists
             </h2>
             <p className="text-lg md:text-xl max-w-3xl mb-10">
-              Harness the power of AI to transform your customer interactions with automated call categorization, 
-              real-time transcription, and advanced sales performance enhancements that deliver real, actionable results.
+              Our follow-up engine keeps things moving, so you can focus on people. Get a comprehensive dashboard 
+              for real-time call analysis with practical insights, not just inflated marketing numbers.
             </p>
             <div>
               <a 
