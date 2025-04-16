@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,13 +57,27 @@ export default function Header() {
           
           {/* Desktop navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#features" className="text-gray-700 hover:text-primary font-medium">Features</a>
-            <a href="#how-it-works" className="text-gray-700 hover:text-primary font-medium">How It Works</a>
-            <a href="#industry-use-cases" className="text-gray-700 hover:text-primary font-medium">Industry Use Cases</a>
-            <a href="#sales-performance" className="text-gray-700 hover:text-primary font-medium">Sales Performance</a>
-            <a href="#integrations" className="text-gray-700 hover:text-primary font-medium">Integrations</a>
-            <a href="#pricing" className="text-gray-700 hover:text-primary font-medium">Pricing</a>
-            <a href="#contact" className="text-gray-700 hover:text-primary font-medium">Contact</a>
+            <Link href="/features">
+              <a className="text-gray-700 hover:text-blue-600 transition">Features</a>
+            </Link>
+            <Link href="/how-it-works">
+              <a className="text-gray-700 hover:text-blue-600 transition">How It Works</a>
+            </Link>
+            <Link href="/industry-use-cases">
+              <a className="text-gray-700 hover:text-blue-600 transition">Industry Use Cases</a>
+            </Link>
+            <Link href="/sales-performance">
+              <a className="text-gray-700 hover:text-blue-600 transition">Sales Performance</a>
+            </Link>
+            <Link href="/integrations">
+              <a className="text-gray-700 hover:text-blue-600 transition">Integrations</a>
+            </Link>
+            <Link href="/pricing">
+              <a className="text-gray-700 hover:text-blue-600 transition">Pricing</a>
+            </Link>
+            <Link href="/contact">
+              <a className="text-gray-700 hover:text-blue-600 transition">Contact</a>
+            </Link>
           </nav>
         </div>
       </div>
@@ -70,13 +85,27 @@ export default function Header() {
       {/* Mobile navigation */}
       <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a href="#features" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Features</a>
-          <a href="#how-it-works" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">How It Works</a>
-          <a href="#industry-use-cases" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Industry Use Cases</a>
-          <a href="#sales-performance" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Sales Performance</a>
-          <a href="#integrations" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Integrations</a>
-          <a href="#pricing" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Pricing</a>
-          <a href="#contact" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Contact</a>
+          <Link href="/features">
+            <a className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Features</a>
+          </Link>
+          <Link href="/how-it-works">
+            <a className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">How It Works</a>
+          </Link>
+          <Link href="/industry-use-cases">
+            <a className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Industry Use Cases</a>
+          </Link>
+          <Link href="/sales-performance">
+            <a className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Sales Performance</a>
+          </Link>
+          <Link href="/integrations">
+            <a className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Integrations</a>
+          </Link>
+          <Link href="/pricing">
+            <a className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Pricing</a>
+          </Link>
+          <Link href="/contact">
+            <a className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Contact</a>
+          </Link>
         </div>
       </div>
     </header>

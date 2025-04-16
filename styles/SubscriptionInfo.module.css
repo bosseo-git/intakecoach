@@ -1,0 +1,200 @@
+.subscriptionInfo {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.subscriptionInfo h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  padding: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.header {
+  background: linear-gradient(to right, #6366f1, #4f46e5);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.active {
+  background: rgba(0, 255, 0, 0.2);
+  color: #0f9d58;
+}
+
+.trialing {
+  background: rgba(255, 193, 7, 0.2);
+  color: #f9a825;
+}
+
+.past_due, .unpaid, .incomplete {
+  background: rgba(255, 87, 34, 0.2);
+  color: #f4511e;
+}
+
+.canceled {
+  background: rgba(97, 97, 97, 0.2);
+  color: #555;
+}
+
+.details {
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.label {
+  font-weight: 600;
+  color: #666;
+  flex: 0 0 30%;
+}
+
+.value {
+  color: #333;
+  flex: 0 0 65%;
+  text-align: right;
+}
+
+.cardExpiry {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  color: #888;
+}
+
+.cancelling {
+  color: #e53935;
+  font-size: 0.9rem;
+  margin-left: 8px;
+}
+
+.manageButton {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 0 20px 20px;
+  padding: 12px 24px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.manageButton:hover {
+  background: #4338ca;
+}
+
+.manageButton:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+.loading {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+}
+
+.error {
+  border-left: 4px solid #e53935;
+  padding: 15px 20px;
+  background: #ffebee;
+  color: #c62828;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.noSubscription {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.noSubscription h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.noSubscription p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 24px;
+  background: #4f46e5;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #4338ca;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+  
+  .label, .value {
+    flex: 0 0 100%;
+    text-align: left;
+  }
+  
+  .value {
+    margin-top: 5px;
+  }
+} 
