@@ -42,7 +42,7 @@ const IndustryUseCasesSection = () => {
         'Increase retention rates for high-value cases'
       ],
       testimonial: {
-        quote: 'IntakeCoach has become an indispensable part of our intake process. We've seen a 34% increase in client retention since implementing the platform.',
+        quote: "IntakeCoach has become an indispensable part of our intake process. We've seen a 34% increase in client retention since implementing the platform.",
         author: 'Jennifer Thompson',
         position: 'Managing Partner, Thompson Law Group'
       }
@@ -60,7 +60,7 @@ const IndustryUseCasesSection = () => {
         'Improve overall patient experience from first contact'
       ],
       testimonial: {
-        quote: 'Our patient conversion rate has increased dramatically since using IntakeCoach. We're seeing fewer missed appointments and better prepared patients.',
+        quote: "Our patient conversion rate has increased dramatically since using IntakeCoach. We're seeing fewer missed appointments and better prepared patients.",
         author: 'Dr. Michael Chen',
         position: 'Director, Premier Medical Group'
       }
@@ -78,7 +78,7 @@ const IndustryUseCasesSection = () => {
         'Create consistent enrollment experiences across teams'
       ],
       testimonial: {
-        quote: 'IntakeCoach has revolutionized our admissions process. We can now identify which counselors need additional training and what messaging resonates with students.',
+        quote: "IntakeCoach has revolutionized our admissions process. We can now identify which counselors need additional training and what messaging resonates with students.",
         author: 'Dr. Sarah Johnson',
         position: 'Director of Admissions, Westfield University'
       }
@@ -96,7 +96,7 @@ const IndustryUseCasesSection = () => {
         'Ensure consistent messaging across all agents'
       ],
       testimonial: {
-        quote: 'The insights from IntakeCoach have helped us refine our initial client conversations. Our agents now convert 40% more calls into showings.',
+        quote: "The insights from IntakeCoach have helped us refine our initial client conversations. Our agents now convert 40% more calls into showings.",
         author: 'Robert Williams',
         position: 'Broker, Williams Realty Partners'
       }
@@ -106,7 +106,7 @@ const IndustryUseCasesSection = () => {
       name: 'Automotive',
       icon: <FaCarAlt />,
       title: 'Drive More Showroom Visits',
-      description: 'Convert more phone inquiries into test drives and purchases by optimizing your dealership's call handling process.',
+      description: "Convert more phone inquiries into test drives and purchases by optimizing your dealership's call handling process.",
       benefits: [
         'Track sales representative performance on calls',
         'Identify missed opportunities in pricing discussions',
@@ -114,7 +114,7 @@ const IndustryUseCasesSection = () => {
         'Better handle initial objections and questions'
       ],
       testimonial: {
-        quote: 'Since implementing IntakeCoach, we've seen a 28% increase in phone-to-showroom conversion rates. The call insights have been invaluable for our sales training.',
+        quote: "Since implementing IntakeCoach, we've seen a 28% increase in phone-to-showroom conversion rates. The call insights have been invaluable for our sales training.",
         author: 'James Peterson',
         position: 'Sales Director, Premium Auto Group'
       }

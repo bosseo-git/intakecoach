@@ -205,7 +205,7 @@ const PricingSection = () => {
             </motion.div>
             <motion.div className={styles.faqItem} variants={itemVariants}>
               <h4>What happens if I exceed my call limit?</h4>
-              <p>If you exceed your monthly call limit, additional calls are billed at a per-call rate. We'll notify you when you're approaching your limit.</p>
+              <p>If you exceed your monthly call limit, additional calls are billed at a per-call rate. We{'ll'} notify you when you{'re'} approaching your limit.</p>
             </motion.div>
             <motion.div className={styles.faqItem} variants={itemVariants}>
               <h4>Do you offer custom plans?</h4>
