@@ -5,6 +5,7 @@ import FeaturesSection from '../components/FeaturesSection';
 import TotalCallInsightsSection from '../components/TotalCallInsightsSection';
 import DetailedCallBreakdownSection from '../components/DetailedCallBreakdownSection';
 import MarketingFluffSection from '../components/MarketingFluffSection';
+import AutomatedMonitoringSection from '../components/AutomatedMonitoringSection';
 import HowItWorksSection from '../components/HowItWorksSection';
 import IndustryUseCasesSection from '../components/IndustryUseCasesSection';
 import SalesPerformanceSection from '../components/SalesPerformanceSection';
@@ -29,6 +30,7 @@ export default function Home() {
         <TotalCallInsightsSection />
         <DetailedCallBreakdownSection />
         <MarketingFluffSection />
+        <AutomatedMonitoringSection />
         <FeaturesSection />
         <HowItWorksSection />
         <SalesPerformanceSection />
