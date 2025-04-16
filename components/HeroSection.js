@@ -20,7 +20,7 @@ export default function HeroSection() {
             </h2>
             <p className="text-lg md:text-xl max-w-3xl mb-10">
               Harness the power of AI to transform your customer interactions with automated call categorization, 
-              real-time transcription, and actionable analytics tailored for your industry.
+              real-time transcription, and advanced sales performance enhancements that deliver real, actionable results.
             </p>
             <div>
               <a 
@@ -30,10 +30,10 @@ export default function HeroSection() {
                 Get Started
               </a>
               <a 
-                href="#how-it-works" 
+                href="#sales-performance" 
                 className="inline-block ml-4 bg-transparent hover:bg-white hover:bg-opacity-10 text-white font-bold py-3 px-8 rounded-full border-2 border-white transition duration-300"
               >
-                Learn More
+                Increase Your Sales
               </a>
             </div>
           </div>

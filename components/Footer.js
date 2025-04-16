@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   
@@ -6,7 +8,13 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold">IntakeCoach</h2>
+            <Image
+              src="/intakecoach.webp"
+              alt="IntakeCoach Logo"
+              width={180}
+              height={40}
+              className="h-10 w-auto mb-3"
+            />
             <p className="mt-2 text-gray-400">Revolutionizing call analysis for businesses</p>
           </div>
           

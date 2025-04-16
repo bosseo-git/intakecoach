@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,16 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-primary">IntakeCoach</h1>
+            <a href="#" className="flex items-center">
+              <Image
+                src="/intakecoach.webp"
+                alt="IntakeCoach Logo"
+                width={180}
+                height={40}
+                className="h-10 w-auto"
+                priority
+              />
+            </a>
           </div>
           
           {/* Mobile menu button */}
@@ -49,6 +59,7 @@ export default function Header() {
             <a href="#features" className="text-gray-700 hover:text-primary font-medium">Features</a>
             <a href="#how-it-works" className="text-gray-700 hover:text-primary font-medium">How It Works</a>
             <a href="#industry-use-cases" className="text-gray-700 hover:text-primary font-medium">Industry Use Cases</a>
+            <a href="#sales-performance" className="text-gray-700 hover:text-primary font-medium">Sales Performance</a>
             <a href="#integrations" className="text-gray-700 hover:text-primary font-medium">Integrations</a>
             <a href="#pricing" className="text-gray-700 hover:text-primary font-medium">Pricing</a>
             <a href="#contact" className="text-gray-700 hover:text-primary font-medium">Contact</a>
@@ -62,6 +73,7 @@ export default function Header() {
           <a href="#features" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Features</a>
           <a href="#how-it-works" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">How It Works</a>
           <a href="#industry-use-cases" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Industry Use Cases</a>
+          <a href="#sales-performance" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Sales Performance</a>
           <a href="#integrations" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Integrations</a>
           <a href="#pricing" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Pricing</a>
           <a href="#contact" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Contact</a>

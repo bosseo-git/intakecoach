@@ -10,7 +10,7 @@ export default function HowItWorksSection() {
       )
     },
     {
-      title: "AI Transcription",
+      title: "AI-Powered Transcription",
       description: "Advanced AI technology converts spoken conversations into accurate text in real-time.",
       icon: (
         <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -19,8 +19,8 @@ export default function HowItWorksSection() {
       )
     },
     {
-      title: "Automated Analysis",
-      description: "Our system categorizes calls and extracts key data points for comprehensive analysis.",
+      title: "Automated Categorization",
+      description: "Our system intelligently categorizes calls and extracts key data points for comprehensive analysis.",
       icon: (
         <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -28,8 +28,17 @@ export default function HowItWorksSection() {
       )
     },
     {
-      title: "Feedback Generation",
-      description: "Receive detailed reports and actionable insights to improve performance and decision-making.",
+      title: "Detailed Analytics",
+      description: "Generate comprehensive reports and identify patterns to optimize your sales approach and team performance.",
+      icon: (
+        <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      )
+    },
+    {
+      title: "Instant Feedback",
+      description: "Receive immediate, actionable insights after every call to continuously improve sales techniques and outcomes.",
       icon: (
         <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -44,7 +53,7 @@ export default function HowItWorksSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            IntakeCoach integrates seamlessly with your existing systems to enhance call management and analysis.
+            IntakeCoach integrates seamlessly with your existing systems to enhance call management, analysis, and sales performance.
           </p>
         </div>
         

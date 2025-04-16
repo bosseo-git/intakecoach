@@ -32,21 +32,29 @@ npm install
 yarn install
 ```
 
-3. Run the development server:
+3. Move the logo file to the public directory:
+```bash
+# If you're using the provided script
+node move-logo.js
+
+# Or manually move the intakecoach.webp file from the root directory to the public directory
+```
+
+4. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Project Structure
 
 - `/pages` - Next.js pages
 - `/components` - React components for each section of the landing page
 - `/styles` - Global CSS and Tailwind configuration
-- `/public` - Static assets
+- `/public` - Static assets including the IntakeCoach logo
 
 ## Built With
 
