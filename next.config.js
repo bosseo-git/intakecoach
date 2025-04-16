@@ -4,7 +4,6 @@ const nextConfig = {
   swcMinify: true,
   // Ensure we use Pages Router and not App Router
   experimental: {
-    appDir: false
   },
   // Optimize output for deployment
   poweredByHeader: false,
