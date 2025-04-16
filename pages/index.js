@@ -4,6 +4,7 @@ import HeroSection from '../components/HeroSection';
 import FeaturesSection from '../components/FeaturesSection';
 import TotalCallInsightsSection from '../components/TotalCallInsightsSection';
 import DetailedCallBreakdownSection from '../components/DetailedCallBreakdownSection';
+import MarketingFluffSection from '../components/MarketingFluffSection';
 import HowItWorksSection from '../components/HowItWorksSection';
 import IndustryUseCasesSection from '../components/IndustryUseCasesSection';
 import SalesPerformanceSection from '../components/SalesPerformanceSection';
@@ -27,6 +28,7 @@ export default function Home() {
         <HeroSection />
         <TotalCallInsightsSection />
         <DetailedCallBreakdownSection />
+        <MarketingFluffSection />
         <FeaturesSection />
         <HowItWorksSection />
         <SalesPerformanceSection />
