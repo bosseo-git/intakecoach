@@ -1,0 +1,10 @@
+﻿{
+    "rules":  [
+                  "Always Apply.md",
+                  "React.md",
+                  "API.md"
+              ],
+    "alwaysApply":  [
+                        "Always Apply.md"
+                    ]
+}
